@@ -1,0 +1,84 @@
+@font-face {
+    font-family: "Jet Brains Regular";
+    src: url(../font/JetBrainsMono-2.242/ttf/JetBrainsMono-Regular.ttf);
+}
+@font-face {
+    font-family: "Jet Brains Bold";
+    src: url(../font/JetBrainsMono-2.242/ttf/JetBrainsMono-Bold.ttf);
+}
+@font-face {
+    font-family: "Imprint";
+    src: url(../font/ImprintMTShadow.ttf);
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #2f2f2f;
+}
+section#header nav {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-around;
+    background-color: white;
+    cursor: pointer;
+    position: fixed;
+}
+section#header .brand {
+    margin-top: 10px;
+    font-size: 24px;
+    font-family: "Jet Brains Bold";
+}
+section#header ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    margin-top: 16px;
+    font-size: 16px;
+    font-family: "Jet Brains Regular";
+}
+section#header a {
+    text-decoration: none;
+    color: black;
+}
+section#header #login {
+    margin-left: 20px;
+    width: 55px;
+    height: 22px;
+    background-color: #2cc945;
+    border: none;
+    color: white;
+    font-family: "Jet Brains Regular";
+    border-radius: 3px;
+    cursor: pointer;
+}
+section#body .main-img {
+    width: 100%;
+    height: 100vh;
+    background: url(/assets/img/landingpage7.webp) no-repeat;
+    background-size: cover;
+}
+section#body .promo-today {
+    width: 100%;
+    margin-top: 10%;
+    font-family: "Imprint";
+}
+section#body p {
+    color: white;
+    font-size: 28px;
+    text-align: center;
+}
+section#body .card-promo {
+    margin-top: 15%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+section#body .card {
+    width: 280px;
+    height: 420px;
+    border-radius: 18px;
+    background-color: white;
+}

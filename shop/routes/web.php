@@ -13,10 +13,11 @@ use App\Http\Controllers\LoginController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['middleware' => ['auth','role:admin,user']], function(){
+       Route::get('/home', [LoginController::class, 'home'])->name('home');
 });
 
+Route::get('/', [LoginController::class, 'welcome'])->name('welcome');
 Route::get('/register',[LoginController::class, 'register'])->name('register');
 Route::get('/login',[LoginController::class, 'login'])->name('login');
 Route::post('/register-user',[LoginController::class, 'registeruser'])->name('register-user');

@@ -8,37 +8,28 @@
   </head>
   <body>
       <nav class="navbar navbar-expand-lg bg-dark">
-  <div class="container">
-    <a class="navbar-brand text-white" href="#">Shop</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link text-white" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="#">Shop</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="#">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="{{ route('register') }}">Register</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="{{ route('logout') }}">Logout</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+            <div class="container">
+                <a class="navbar-brand text-white" href="#">Shop</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                    <a class="nav-link text-white" href="{{ route('logout') }}">Logout</a>
+                    </li>
+                 </ul>
+                </div>
+            </div>
+      </nav>
 
-<div class="container bg-light p-5">
-    <div class="card text-center p-5">
+<div class="container bg-light p-4">
+    <div class="card text-center p-2">
         <h4>Welcome, {{ Auth::user()->name }}</h4>
     </div>
+    @if(auth()->user()->level == "admin")
+    <button class="btn btn-primary">Test</button>
+    @endif
 </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
   </body>

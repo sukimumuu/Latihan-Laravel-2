@@ -9,6 +9,12 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
+    public function home(){
+        return view('home.index');
+    }
+    public function welcome(){
+        return view('welcome');
+    }
     public function register(){
         return view('auth.register');
     }
@@ -21,16 +27,16 @@ class LoginController extends Controller
             'email' => $req->email,
             'password' => bcrypt($req->password)
         ]);
-        return view('auth.login');
+        return redirect('/login');
     }
     public function loginuser(Request $req){
        if(Auth::attempt($req->only('name','password'))){
-        return view('home.index');
+        return redirect('/home');
        }
-       return view('auth.login');
+       return redirect('/login');
     }
     public function logout(){
         Auth::logout();
-        return view('auth.login');
+        return redirect('/');
     }
 }

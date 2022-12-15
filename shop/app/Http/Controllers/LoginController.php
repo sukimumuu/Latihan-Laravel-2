@@ -6,10 +6,10 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-
 class LoginController extends Controller
 {
     public function home(){
+        date_default_timezone_set('Asia/Jakarta');
         return view('home.index');
     }
     public function welcome(){

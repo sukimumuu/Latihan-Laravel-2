@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PostController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,8 +14,11 @@ use App\Http\Controllers\LoginController;
 |
 */
 
-Route::group(['middleware' => ['auth','role:admin,user']], function(){
+Route::group(['middleware' => ['auth']], function(){
        Route::get('/home', [LoginController::class, 'home'])->name('home');
+});
+Route::group(['middleware' => ['auth','role:owner,admin']], function(){
+       Route::get('/crud-post', [PostController::class, 'crud'])->name('crud-post');
 });
 
 Route::get('/', [LoginController::class, 'welcome'])->name('welcome');

@@ -20,6 +20,12 @@ class DatabaseSeeder extends Seeder
         'name' => 'Sukishaa',
         'email' => 'sukishaa@admin.com',
         'password' => bcrypt('apaaja'),
+        'level' => 'owner'
+        ]);
+        User::create([
+        'name' => 'Sukimumu',
+        'email' => 'sukimumu@admin.com',
+        'password' => bcrypt('bolehaja'),
         'level' => 'admin'
         ]);
     }

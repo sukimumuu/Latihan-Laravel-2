@@ -19,6 +19,8 @@ Route::group(['middleware' => ['auth']], function(){
 });
 Route::group(['middleware' => ['auth','role:owner,admin']], function(){
        Route::get('/crud-post', [PostController::class, 'crud'])->name('crud-post');
+       Route::post('/crud-submit', [PostController::class, 'create'])->name('crud-submit');
+       Route::get('/data-product/{id}/delete', [PostController::class, 'delete'])->name('delete-product');
 });
 
 Route::get('/', [LoginController::class, 'welcome'])->name('welcome');

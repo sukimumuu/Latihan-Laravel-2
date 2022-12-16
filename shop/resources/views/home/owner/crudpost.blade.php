@@ -23,9 +23,10 @@
                             </h2>
                             <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
-                                    <form action="" method="post">
+                                    <form action="{{ route('crud-submit') }}" method="post" enctype="multipart/form-data">
+                                        @csrf
                                         <div class="mb-3">
-                                            <label for="exampleFormControlInput1" class="form-label">Product Title</label>
+                                            <label for="exampleFormControlInput1" class="form-label">Name Product</label>
                                             <input type="text" class="form-control" id="exampleFormControlInput1" name="title">
                                         </div>
                                         <div class="mb-3">
@@ -74,23 +75,37 @@
                             <div id="collapse" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
                                     <table class="table table-info table-striped">
+                                        @php
+                                            $no=1;
+                                        @endphp
                                         <thead>
-                                            <tr>
-                                            <th scope="col">#</th>
-                                            <th scope="col">First</th>
-                                            <th scope="col">Last</th>
-                                            <th scope="col">Handle</th>
+                                            <tr class="text-center">
+                                            <th scope="col">No</th>
+                                            <th scope="col">Name Product</th>
+                                            <th scope="col">Price</th>
+                                            <th scope="col">Picture</th>
+                                            <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                            <th scope="row">1</th>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
-                                            </tr>
+                                            @foreach ($data_post as $data)
+                                               <tr class="text-center">
+                                                <td>{{ $no++ }}</td>
+                                                <td>{{ $data->title }}</td>
+                                                <td>Rp.{{ $data->price }},00</td>
+                                                <td>
+                                                    <img src="{{ asset('pict_product/'.$data->picture) }}" alt="" width="100px">
+                                                </td>
+                                                <td>
+                                                    <a href="/data-product/{{ $data->id }}/delete"><button type="button" class="btn btn-danger">Delete</button></a>
+                                                </td>
+                                               </tr> 
+                                            @endforeach
                                         </tbody>
                                     </table>
+                                        <button class="btn btn-danger collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse" aria-expanded="false" aria-controls="collapse">
+                                            Close
+                                        </button>
                                 </div>
                             </div>
                         </div>

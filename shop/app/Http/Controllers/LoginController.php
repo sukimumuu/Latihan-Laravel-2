@@ -5,12 +5,13 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
+use App\Models\Post;
 class LoginController extends Controller
 {
     public function home(){
+        $data_post = Post::all();
         date_default_timezone_set('Asia/Jakarta');
-        return view('home.index');
+        return view('home.index' , compact('data_post'));
     }
     public function welcome(){
         return view('welcome');

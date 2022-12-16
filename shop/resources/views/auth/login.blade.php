@@ -12,7 +12,7 @@
                         </div>
                         <div class="form-floating">
                             <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password">
-                            <label for="floatingPassword">Password</label>
+                            <label for="floatingPassword">Password</label>    
                         </div>
                         <button type="submit" class="btn btn-secondary mt-5" style="float: right">Login</button>
                         <a class="mt-5" style="float: left" href="{{ route('register') }}">If you dont have an account, Register Here</a>
@@ -21,5 +21,8 @@
             </div>
         </div>
 @endsection
+<script>
+
+</script>
 
 

@@ -1,29 +1,38 @@
 @extends('layout.main')
 @section('content')
-    <div class="container bg-light p-5">
-        <div class="card text-center p-5">
-                <h4>Register</h4>
-            <div class="card-body mx-auto mt-2 p-2" style="width: 600px;">
-                <form action="{{ route('register-user') }}" method="post">
-                    @csrf
-                    <div class="form-floating mb-3 text-center">
-                        <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" name="name">
-                        <label for="floatingInput">Username</label>
-                    </div>
-                    <div class="form-floating mb-3">
-                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="email">
-                        <label for="floatingInput">Email address</label>
-                    </div>
-                    <div class="form-floating">
-                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password">
-                        <label for="floatingPassword">Password</label>
-                    </div>
-                    <button type="submit" class="btn btn-secondary mt-5" style="float: right">Register</button>
-                    <a class="mt-5" style="float: left" href="{{ route('login') }}">If you have an account, Login Here</a>
-                </form>
-            </div>
+    <div class="container bg-light">
+        <div class="card-header h2 text-center mt-3">
+            Register
         </div>
-    </div>
+        <form action="{{ route('register-user') }}" method="post">
+            @csrf
+            <div class="row">
+                <div class="col-12 ">
+                    <div class="mb-3 mt-5 col-lg-4 col-md-6 col-sm-6 col-7 mx-auto">
+                        <label for="exampleFormControlInput1" class="form-label">Username</label>
+                        <input type="text" class="form-control form-control-sm" id="exampleFormControlInput1" name="name">
+                    </div>
+                </div>
+                <div class="col-12 ">
+                    <div class="mb-3 col-lg-4 col-md-6 col-sm-6 col-7 mx-auto">
+                        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                        <input type="email" class="form-control form-control-sm" id="exampleFormControlInput1" name="email">
+                    </div>
+                </div>
+                <div class="col-12 ">
+                    <div class="mb-3 col-lg-4 col-md-6 col-sm-6 col-7 mx-auto">
+                        <label for="exampleFormControlInput1" class="form-label">Password</label>
+                        <input type="password" class="form-control form-control-sm" id="exampleFormControlInput1" name="password">
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-xl-11 col-lg-9 col-md-11 col-sm-11">
+                <div class="mb-3 col-xl-4  col-lg-3 col-md-4 col-sm-4 col-7 ms-auto">
+                    <button type="submit" class="btn btn-secondary text-white">Register</button>
+                </div>
+            </div>
+        </form>
+       </div>
 @endsection
 
 

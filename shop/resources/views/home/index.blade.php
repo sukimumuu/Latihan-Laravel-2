@@ -30,8 +30,8 @@
                <p id="clock"></p>
             </div>
         </div>
-        <div class=" row col-12 mx-auto mt-5">
-            <div class="col-3">
+        <div class=" row col-12 col-xl-12 col-lg-12 col-md-12 mx-auto mt-5">
+            <div class="col-12 col-xl-3 col-lg-3 col-md-4 mb-3">
                 <div class="card">
                     <div class="card-header bg-success">
                         <h3 class="h4 text-center text-white">Post</h3>
@@ -44,7 +44,7 @@
                    </div>
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-12 col-xl-3 col-lg-3 col-md-4 mb-3">
                 <div class="card">
                     <div class="card-header bg-danger">
                         <h3 class="h4 text-center text-white">Option</h3>
@@ -57,14 +57,14 @@
                    </div>
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-12 col-xl-3 col-lg-3 col-md-4 mb-3">
                 <div class="card">
                         <div class="card-body">
                      <i class="nav-link disabled">Coming Soon</i>
                    </div>
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-12 col-xl-3 col-lg-3 col-md-12 mb-3">
                 <div class="card disabled">
                         <div class="card-body">
                      <i class="nav-link disabled">Coming Soon</i>
